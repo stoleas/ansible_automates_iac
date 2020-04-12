@@ -3,9 +3,7 @@
   "title": "Ansible Automates Infrastructure as Code",
   "environment": {
     "aws": {
-      "properties": {
         "region": "us-east-2"
-      }
     }
   }
 }
