@@ -4,7 +4,9 @@
   gather_facts: False
   tasks:
 
-  - name: Debugging
-    debug:
-      msg: "{{ input }}"
+  - name: Fail when environment is not aws
+    fail:
+      msg: "Current target environment is {{ input.environment }}"
+    when: input.environment.aws is undefined
+
 
