@@ -6,6 +6,6 @@
 
   - name: Fail when environment is not azure
     fail:
-      msg: "Current target environment is {{ input.environment }}"
+      msg: "Current target environment is {{ input.environment[0] }}"
     when: input.environment.azure is undefined
 
