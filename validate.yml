@@ -12,3 +12,8 @@
   - name: Validating JSON input
     json_validator:
       json: "{{ input }}"
+
+  - name: Setting input as stats
+    set_stats:
+      data:
+        input: "{{ input }}"
