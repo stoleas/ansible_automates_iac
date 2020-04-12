@@ -4,7 +4,7 @@
   gather_facts: False
   tasks:
 
-    - name: Fail when environment is not azure
+  - name: Fail when environment is not azure
     fail:
       msg: "Current target environment is {{ input.environment }}"
     when: input.environment.azure is undefined
