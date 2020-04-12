@@ -12,7 +12,7 @@
     ec2_instance:
       name: equail-lnx1
       state: running
-      region: "input.environment.aws.region"
+      region: "{{ input.environment.aws.region }}"
       instance_type:  t2.micro
       security_group: sg-a9add2d0
       image_id: ami-0520e698dd500b1d1
