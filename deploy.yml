@@ -1,0 +1,9 @@
+- name: Deploying Infrastructure
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+  
+  - name: Debugging
+    debug:
+      msg: "{{ input }}"
