@@ -15,4 +15,5 @@
 
   - name: Setting input as stats
     set_stats:
-      input: "{{ input }}"
+      data:
+        input: "{{ input }}"
