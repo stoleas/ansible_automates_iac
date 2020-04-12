@@ -1,4 +1,5 @@
-- hosts: localhost
+- name: Running JSON Validation
+  hosts: all
   ansible_connection: local
   gather_facts: False
   tasks:
