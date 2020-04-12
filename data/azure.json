@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "title": "Ansible Automates Infrastructure as Code",
+    "azure": {
+        "properties": {
+            "region": "eastus"
+        }
+    }
+}

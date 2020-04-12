@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "title": "Ansible Automates JSON Schema",
+    "description": "JSON Schema to validate Ansible Automates Lab",
+    "azure": {
+        "type": "object",
+        "description": "Azure Specific Properties",
+        "properties": {
+            "region": {
+                "type": "string",
+                    "enum": [
+                        "eastus",
+                        "centralus"
+                    ]       
+            }
+        }
+    },
+    "aws": {
+        "type": "object",
+        "description": "AWS Specific Properties",
+        "properties": {
+            "region": {
+                "type": "string",
+                    "enum": [
+                        "us-east-2",
+                        "us-west-1"
+                    ]
+            
+            }
+        }
+    }
+}

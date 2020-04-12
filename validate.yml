@@ -1,0 +1,10 @@
+- hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Including input variables
+    include_vars: input.json
+    name: input
+
+  - name: Validating JSON input
+    json_validator:
+      json: "{{ input }}"
