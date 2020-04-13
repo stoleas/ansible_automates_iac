@@ -2,8 +2,8 @@
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "title": "Ansible Automates Infrastructure as Code",
   "environment": {
-    "azure": {
-        "region": "eastus"
+    "aws": {
+        "region": "us-east-2"
     }
   }
 }
