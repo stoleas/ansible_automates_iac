@@ -24,5 +24,8 @@
       register: output
 
     - debug:
-        var: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces.properties.ipConfigurations.properties.publicIPAddress.properties.ipAddress
+      var: output.ansible_facts.azure_vm
+
+#    - debug:
+#        var: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces.properties.ipConfigurations.properties.publicIPAddress.properties.ipAddress
     when: input.environment.azure is defined
