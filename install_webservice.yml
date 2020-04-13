@@ -1,4 +1,5 @@
 - hosts: localhost
+  connection: local
   tasks:
   - name: Adding Provisioned Server to Inventory
     add_host:
