@@ -23,8 +23,8 @@
         state: present
       register: output
 
-    - debug:
-        var: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces[0].properties.ipConfigurations[0].properties.publicIPAddress.properties.ipAddress
-#    - debug:
-#        var: output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces.properties.ipConfigurations.properties.publicIPAddress.properties.ipAddress
+    - name: Saving Provisioned IP Address
+      set_stats:
+        data:
+          provision_ip: "{{ output.ansible_facts.azure_vm.properties.networkProfile.networkInterfaces[0].properties.ipConfigurations[0].properties.publicIPAddress.properties.ipAddress }}"
     when: input.environment.azure is defined
