@@ -11,10 +11,14 @@
   - name: Create an Azure Instance
     azure_rm_virtualmachine:
       name: "equail_lab"
-      image: "CentOS-based 7.7"
       admin_username: "equail"
       resource_group: "ansible_automates_iac"
       region: "{{ input.environment.azure.region }}"
-      ssh_public_keys:
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC71OIX5imH9vsgRr6X/iPsZAHT7+hmfwSYM9rNiCLkVi4E8j83yOTMAvLCYZf7ehMUgEe+ElG/CfKEKXXeXskxSy0Ws4QMRRgHa7p4am6m3OJYamK+i0dFHZl9D/pe5MJNrYKeyaIVUud86ZgE8WtYV3d4uA2GacGzudc/I+a+ntQlfaecQZyz7/Nhe/A6P7zWrUTr++p8XU97LcvbrP512MGzyaCU/ZY6RkA2901nzqk8lzN0zuYbZzUDoD96yblojCecFFrgqUdyZS/0L7jMM4YddZvth2xcNcNUwGjiSw5gsdKVxaUAtzTq/bevAcrhyashSsjsWbY1OFGw0I+b
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.7'
+        version: latest
+        ssh_public_keys:
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC71OIX5imH9vsgRr6X/iPsZAHT7+hmfwSYM9rNiCLkVi4E8j83yOTMAvLCYZf7ehMUgEe+ElG/CfKEKXXeXskxSy0Ws4QMRRgHa7p4am6m3OJYamK+i0dFHZl9D/pe5MJNrYKeyaIVUud86ZgE8WtYV3d4uA2GacGzudc/I+a+ntQlfaecQZyz7/Nhe/A6P7zWrUTr++p8XU97LcvbrP512MGzyaCU/ZY6RkA2901nzqk8lzN0zuYbZzUDoD96yblojCecFFrgqUdyZS/0L7jMM4YddZvth2xcNcNUwGjiSw5gsdKVxaUAtzTq/bevAcrhyashSsjsWbY1OFGw0I+b
       state: present
