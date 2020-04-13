@@ -22,4 +22,4 @@
   - name: Creating index.html
     copy:
       dest: /var/www/html/index.html
-      content: "<html><font size='10'>Hello Ansible Automates!!!</font></html>"
+      content: "<html><font size='10'>Hello Ansible Automates!!!<br>AWS</font></html>"
