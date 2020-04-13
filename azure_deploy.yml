@@ -13,7 +13,6 @@
       name: "equail_lab"
       admin_username: "equail"
       resource_group: "ansible_automates_iac"
-      region: "{{ input.environment.azure.region }}"
       image:
         offer: CentOS
         publisher: OpenLogic
