@@ -10,7 +10,7 @@
 
   - name: Create an Azure Instance
     azure_rm_virtualmachine:
-      name: "equail_lab"
+      name: "equail-az-lab"
       admin_username: "equail"
       resource_group: "ansible_automates_iac"
       vm_size: Standard_D2s_v3
