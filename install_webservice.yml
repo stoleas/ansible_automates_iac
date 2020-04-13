@@ -1,0 +1,24 @@
+- hosts: localhost
+  tasks:
+  - name: Adding Provisioned Server to Inventory
+    add_host:
+      name: "{{ provision_ip }}"
+      groups: just_created
+
+- hosts: just_created
+  become: True
+  tasks:
+  - name: Install Apache
+    package:
+      name: httpd
+      state: present
+
+  - name: Starting Apache
+    service:
+      name: httpd
+      state: started
+
+  - name: Creating index.html
+    copy:
+      dest: /var/www/index.html
+      content: "Hello Ansible Automates IaC"

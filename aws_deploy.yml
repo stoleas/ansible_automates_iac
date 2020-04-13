@@ -23,3 +23,8 @@
     
   - debug:
       var: output.instances[0].public_ip_address
+
+  - name: Saving Provisioned IP Address
+    set_stats:
+      data:
+        provision_ip: "{{ output.instances[0].public_ip_address }}"
