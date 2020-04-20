@@ -3,7 +3,8 @@
   "title": "Ansible Automates Infrastructure as Code",
   "environment": {
     "aws": {
-        "region": "us-east-2"
+      "region": "us-east-2",
+      "vm_size": "t2.micro"
     }
   }
 }
