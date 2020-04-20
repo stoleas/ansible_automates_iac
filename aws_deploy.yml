@@ -4,22 +4,24 @@
   gather_facts: False
   tasks:
 
-  - block:
-    - name: Create an EC2 Instance
-      ec2_instance:
-        name: equail-lnx1
-        state: running
-        region: "{{ input.environment.aws.region }}"
-        instance_type:  t2.micro
-        security_group: sg-a9add2d0
-        image_id: ami-0520e698dd500b1d1
-        key_name: equail_lab
-        network:
-          assign_public_ip: true
-      register: output
+  - name: Fail when not AWS
+    fail:
+    when: input.environment.aws is not defined
 
-    - name: Saving Provisioned IP Address
-      set_stats:
-        data:
-          provision_ip: "{{ output.instances[0].public_ip_address }}"
-    when: input.environment.aws is defined
+  - name: Create an EC2 Instance
+    ec2_instance:
+      name: equail-lnx1
+      state: running
+      region: "{{ input.environment.aws.region }}"
+      instance_type:  "{{ input.environment.aws.vm_size }}"
+      security_group: sg-a9add2d0
+      image_id: ami-0520e698dd500b1d1
+      key_name: equail_lab
+      network:
+        assign_public_ip: true
+    register: output
+
+  - name: Saving Provisioned IP Address
+    set_stats:
+      data:
+        provision_ip: "{{ output.instances[0].public_ip_address }}"

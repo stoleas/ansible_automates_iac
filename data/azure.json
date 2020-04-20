@@ -3,7 +3,8 @@
   "title": "Ansible Automates Infrastructure as Code",
   "environment": {
     "azure": {
-      "region": "eastus"
+      "region": "eastus",
+      "vm_size": "Standard_D2s_v3"
     }
   }
 }
