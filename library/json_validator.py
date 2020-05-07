@@ -4,7 +4,8 @@
 from __future__ import absolute_import, division, print_function
 from ansible.module_utils.basic import *
 from jsonschema import validate, ValidationError
-import urllib, json, os, sys
+import json, os, sys
+import urllib.request
 
 __metaclass__ = type
 
