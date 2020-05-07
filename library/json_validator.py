@@ -4,8 +4,7 @@
 from __future__ import absolute_import, division, print_function
 from ansible.module_utils.basic import *
 from jsonschema import validate, ValidationError
-import json, os, sys
-import urllib.request
+import urllib, json, os, sys
 
 __metaclass__ = type
 
@@ -73,7 +72,7 @@ def main():
 
     if _schema is None:
         if _json['$schema'] is not None:
-            response = urllib..request.urlopen(_json['$schema'])
+            response = urllib.urlopen(_json['$schema'])
             _schema = json.loads(response.read())
     else:
         _schema = json.loads(_schema)
